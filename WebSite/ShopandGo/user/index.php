@@ -20,7 +20,7 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-	<!-- Favicons -->
+	<!-- Favicon -->
     <link rel="shortcut icon" href="../assets/ico/secondlogo.png">
   </head>
 <body>

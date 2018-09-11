@@ -25,7 +25,7 @@
   </head>
 <body>
 <!--
-	Upper Header Section
+	Upper Header Sectionn
 -->
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="topNav">

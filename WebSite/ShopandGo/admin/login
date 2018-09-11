@@ -1,0 +1,17 @@
+<?php
+	if(ISSET ($_POST['login'])){
+		$ = $_POST['username'];
+		$mp_admin = $_POST['mp_admin'];
+		$query = $conn->query("SELECT * FROM `admin` WHERE `nom_admin` = '$nom_admin' && `mp_admin` = '$mp_admin'") or die(mysqli_error());
+		$fetch = $query->fetch_array();
+		$row = $query->num_rows;
+		
+		if($row > 0){
+			session_start();
+			$_SESSION['id_admin'] = $fetch['id_admin'];
+			header('location:home.php');
+		}else{
+			echo "<center><labe style = 'color:red;'>Nom ou mot de passe invalide</label></center>";
+		}
+	}
+?>

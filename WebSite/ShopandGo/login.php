@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<?php
-	session_start();
-	if(ISSET($_SESSION['admin_id'])){
-		header('location:index.php');
-	}
-?>
+<?php require_once "user/connect.php"?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -43,10 +38,10 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="index.php"> <span class="icon-home"></span> Home</a>
-				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="register.php"><span class="icon-edit"></span> Free Register </a>
-				<a href="contact.php"><span class="icon-envelope"></span> Contact us</a>
+				<a href="index.php"> <span class="icon-home"></span> Accueil</a>
+				<a href="#"><span class="icon-user"></span> Mon compte</a>
+				<a href="register.php"><span class="icon-edit"></span> Inscription </a>
+				<a href="contact.php"><span class="icon-envelope"></span> Contactez Nous</a>
 				<a href="cart.php"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
@@ -62,7 +57,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.php"><span>Shop and Go</span>
 		<img src="assets/img/logo.png" alt="bootstrap sexy shop">
 	</a>
 	</h1>
@@ -98,32 +93,32 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class="active"><a href="index.php">Home	</a></li>
-			  <li class=""><a href="list-view.php">List View</a></li>
+			  <li class="active"><a href="index.php">Accueil	</a></li>
+			  <li class=""><a href="list-view.php">Liste des produits</a></li>
 			  <li class=""><a href="grid-view.php">Grid View</a></li>
 			  <li class=""><a href="three-col.php">Three Column</a></li>
 			  <li class=""><a href="four-col.php">Four Column</a></li>
 			  <li class=""><a href="general.php">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
+			  <input type="text" placeholder="Rechercher" class="search-query span2">
 			</form>
 			<ul class="nav pull-right">
 			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Se connecter <b class="caret"></b></a>
 				<div class="dropdown-menu">
 				<form class="form-horizontal loginFrm">
 				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
+					<input type="text" class="span2" id="inputEmail" placeholder="Pseudo">
 				  </div>
 				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
+					<input type="password" class="span2" id="inputPassword" placeholder="Mot de Passe">
 				  </div>
 				  <div class="control-group">
 					<label class="checkbox">
-					<input type="checkbox"> Remember me
+					<input type="checkbox"> Se souvenir de moi
 					</label>
-					<button type="submit" class="shopBtn btn-block">Sign in</button>
+					<button type="submit" class="shopBtn btn-block">Se connecter</button>
 				  </div>
 				</form>
 				</div>
@@ -140,30 +135,30 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Produits Laitiers</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Conserves</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Produits Frais</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Pates</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Sucrerie</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Légumes Secs</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Boissons</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Epicerie</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Droguerie</a></li>
+		<li><a href="products.php"><span class="icon-chevron-right"></span>Accessoires</a></li>
 		<li style="border:0"> &nbsp;</li>
-		<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
+		<li> <a class="totalInCart" href="cart.php"><strong>Prix Total  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
 </div>
 
 			  <div class="well well-small alert alert-warning cntr">
-				  <h2>50% Discount</h2>
+				  <h2>Promotion 50% </h2>
 				  <p>
-					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
+					  sur ces produits<br><br><a class="defaultBtn" href="#">Cliquez ici</a>
 				  </p>
 			  </div>
 			  <div class="well well-small" ><a href="#"><img src="assets/img/livraison.jpg" alt="payment method paypal"></a></div>
 
-			<a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
+			<a class="shopBtn btn-block" href="#">Produits arrivants <br><small>Cliquez ici</small></a>
 			<br>
 			<br>
 			<ul class="nav nav-list promowrapper">
@@ -172,7 +167,7 @@ Body Section
 				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> Voir plus</a>
 				<img src="assets/img/aa.png" alt="bootstrap ecommerce templates">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.php">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="product_details.php">Voir Plus</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
@@ -182,17 +177,17 @@ Body Section
 				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> Voir plus</a>
 				<img src="assets/img/shopping-cart-template.png" alt="shopping cart template">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.php">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="product_details.php">Voir Plus</a> <span class="pull-right">$22.00</span></h4>
 				</div>
 			  </div>
 			</li>
 			<li style="border:0"> &nbsp;</li>
 			<li>
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> Voir plus</a>
+				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> Voir Plus</a>
 				<img src="assets/img/bootstrap-template.png" alt="bootstrap template">
 				<div class="caption">
-				  <h4><a class="defaultBtn" href="product_details.php">VIEW</a> <span class="pull-right">$22.00</span></h4>
+				  <h4><a class="defaultBtn" href="product_details.php">Voir Plus</a> <span class="pull-right">22.00 DA</span></h4>
 				</div>
 			  </div>
 			</li>
@@ -201,26 +196,26 @@ Body Section
 	</div>
 	<div class="span9">
     <ul class="breadcrumb">
-		<li><a href="index.php">Home</a> <span class="divider">/</span></li>
-		<li class="active">Login</li>
+		<li><a href="index.php">Accueil</a> <span class="divider">/</span></li>
+		<li class="active">Se connecter</li>
     </ul>
-	<h3> Login</h3>
+	<h3> Se connecter</h3>
 	<hr class="soft"/>
 
 	<div class="row">
 		<div class="span4">
 			<div class="well">
-			<h5>CREATE YOUR ACCOUNT</h5><br/>
-			Enter your e-mail address to create an account.<br/><br/><br/>
+			<h5>Creer un compte</h5><br/>
+			Entrer votre Nom pour pouvoir créer votre compte<br/><br/><br/>
 			<form>
 			  <div class="control-group">
-				<label class="control-label" for="inputEmail">E-mail address</label>
+				<label class="control-label" for="inputEmail">E-mail </label>
 				<div class="controls">
 				  <input class="span3"  type="text" placeholder="Email">
 				</div>
 			  </div>
 			  <div class="controls">
-			  <button type="submit" class="btn block">Create Your Account</button>
+			  <button type="submit" class="btn block">Creer un compte</button>
 			  </div>
 			</form>
 		</div>
@@ -228,26 +223,27 @@ Body Section
 		<div class="span1"> &nbsp;</div>
 		<div class="span4">
 			<div class="well">
-			<h5>ALREADY REGISTERED ?</h5>
+			<h5>Vous avez déja un compte ?</h5>
 			<form>
 			  <div class="control-group">
-				<label class="control-label" for="inputEmail">Email</label>
+				<label class="control-label" for="inputEmail">Pseudo</label>
 				<div class="controls">
-				  <input class="span3"  type="text" placeholder="Email">
+				  <input class="span3"  type="text" placeholder="Pseudo">
 				</div>
 			  </div>
 			  <div class="control-group">
-				<label class="control-label" for="inputPassword">Password</label>
+				<label class="control-label" for="inputPassword">Mot de Passe</label>
 				<div class="controls">
-				  <input type="password" class="span3" placeholder="Password">
+				  <input type="password" class="span3" placeholder="Mot de Passe">
 				</div>
 			  </div>
 			  <div class="control-group">
 				<div class="controls">
-				  <button type="submit" class="defaultBtn">Sign in</button> <a href="#">Forget password?</a>
+				  <button type="submit" class="defaultBtn">Se connecter</button> <a href="#">Mot de passe oublié ?</a>
 				</div>
 			  </div>
 			</form>
+			<?php require_once 'user/login.php'?>
 		</div>
 		</div>
 	</div>
@@ -332,7 +328,7 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
 		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
 	</p>
-	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
+<span>Shop and Go<br> ALGERIE</span>
 </div>
 </div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>

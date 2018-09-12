@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once "user/connect.php"?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -203,6 +204,7 @@ Body Section
 	<div class="well">
 	<form class="form-horizontal">
 		<h3>Vos informations</h3>
+    <?php require_once 'user/add_query_account.php'?>
 		<div class="control-group">
 		<label class="control-label">titre <sup>*</sup></label>
 		<div class="controls">
@@ -492,3 +494,4 @@ accompanied by English versions from the 1914 translation by H. Rackham.
     <script src="assets/js/shop.js"></script>
   </body>
 </html>
+

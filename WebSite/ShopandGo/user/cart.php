@@ -124,59 +124,34 @@ Navigation Bar Section
                 <tr>
                   <th>Produit</th>
                   <th>Description</th>
-				  <th>	Ref. </th>
-                  <th>Disponibilitée</th>
                   <th>Prix</th>
                   <th>Quantitée</th>
+                  <th>PHOTO</th>
                   <th>Total</th>
+                  <th> Options</th>
 				</tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><img width="100" src="../assets/img/e.jpg" alt=""></td>
-                  <td>Items name here<br>Carate : 22<br>Model : n/a</td>
-                  <td> - </td>
-                  <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-                  <td>$50.00</td>
-                  <td>
-					<input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-				</div>
-				</td>
-                  <td>$100.00</td>
-                </tr>
-				<tr>
-                  <td><img width="100" src="../assets/img/f.jpg" alt=""></td>
-                  <td>Item names and brief details<br>Carate:24 <br>Model:HBK24</td>
-                  <td> - </td>
-                  <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-                  <td>$348.42</td>
-                  <td>
-				  <input class="span1" style="max-width:34px" placeholder="1" size="16" type="text">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button">+</button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-				</div>
-				  </td>
-                  <td>$348.42</td>
-                </tr>
-                <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td> $448.42</td>
-                </tr>
-                 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td> $448.42</td>
-                </tr>
-				 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td> $448.42</td>
-                </tr>
-				 <tr>
-                  <td colspan="6" class="alignR">Total products:	</td>
-                  <td class="label label-primary"> $448.42</td>
-                </tr>
-				</tbody>
+<?php
+  $query = $conn->query("SELECT * FROM `panier` WHERE `id_user` = '$idclt'") or die(mysqli_error());
+  while($fetch = $query->fetch_array()){
+?>
+  <tr>
+    <td><?php echo $fetch['lib_produit']?></td>
+    <td><?php echo $fetch['desc_produit']?></td>
+    <td><?php echo $fetch['prix_produit']?></td>
+    <td><?php echo $fetch['nbr']?></td>
+
+
+
+    <td><center><img src = "../photo_produit/<?php echo $fetch['photo_produit']?>" height = "50" width = "50"/></center></td>
+    <td><?php echo $fetch['ETTOOOTAAALL']?></td>
+    <td><center><a class = "btn btn-danger" onclick = "confirmationDelete(this); return false;" href = "delete_produit.php?id_panier=<?php echo $fetch['id_panier']?>"><i class = "glyphicon glyphicon-remove"></i> Retirer ce produit </a></center></td>
+  </tr>
+<?php
+  }
+?>
+</tbody>
             </table><br/>
 
 
